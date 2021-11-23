@@ -15,8 +15,8 @@ const { exec } = require('child_process')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const settings = JSON.parse(fs.readFileSync('./settings.json'))
 // PEPE 
-ownernamepepe = "ꪶ͢ɪͥᴛͭsᷤ ͢ᴍͫᴇͤᡃ⃝ғᴀᴢᴢ༄"
-botnamepepe = "●◉✿𝙉𝘼𝙕𝙐𝙆𝙊✿◉●"
+ownernamepepe = "𝙿𝙴𝙿𝙴 𝚂𝙸𝚁"
+botnamepepe = "𝙿𝙴𝙿𝙴 𝙱𝙾𝚃"
 
 // ------------- fear aavanda keto -----------
 
