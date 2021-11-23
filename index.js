@@ -26,7 +26,7 @@ const settings = JSON.parse(fs.readFileSync('./settings.json'))
 				year: 'numeric'
 		       })
 // PEPE 
-ownernamepepe = "𝙿𝙴𝙿𝙴 𝚂𝙸𝚁"
+ownernamepepe = "𝙻𝙴𝚅𝙸 𝚂𝙸𝚁"
 botnamepepe = "𝙿𝙴𝙿𝙴 𝙱𝙾𝚃"
 
 // ------------- fear aavanda keto -----------
