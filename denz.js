@@ -108,8 +108,8 @@ nopref = false
 // PEPE 
 ApiZeks = "https://api.zeks.xyz",
 zeksApikey = "Alphabott",
-ownernamepepe = "ꪶ͢ɪͥᴛͭsᷤ ͢ᴍͫᴇͤᡃ⃝ғᴀᴢᴢ༄"
-botnamepepe = "●◉✿𝙉𝘼𝙕𝙐𝙆𝙊✿◉●"
+ownernamepepe = "𝙿𝙴𝙿𝙴 𝚂𝙸𝚁",
+botnamepepe = "𝙿𝙴𝙿𝙴 𝙱𝙾𝚃"
 
 // ------------- fear aavanda keto -----------
 
