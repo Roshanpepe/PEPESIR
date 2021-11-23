@@ -108,8 +108,10 @@ nopref = false
 // PEPE 
 ApiZeks = "https://api.zeks.xyz",
 zeksApikey = "Alphabott",
-ownernamepepe = "𝙿𝙴𝙿𝙴 𝚂𝙸𝚁",
+ownernamepepe = "𝙿𝙴𝙿𝙴 𝚂𝙸𝚁"
 botnamepepe = "𝙿𝙴𝙿𝙴 𝙱𝙾𝚃"
+autovn = false;
+autoketik = false;
 
 // ------------- fear aavanda keto -----------
 
@@ -288,7 +290,7 @@ try {
 		const isGroupAdmins = groupAdmins.includes(sender) || false
 		const isKickArea = isGroup ? kickarea.includes(from) : false
 		const isAntiLink = isGroup ? antilink.includes(from) : false
-		const isWelkom = isGroup ? welkom.includes(from) : false
+		const isWelkom = isGroup ? welkom.includes(from) : true
 		const isAuto = isGroup ? autosticker.includes(from) : false
 		const isMuted = isGroup ? mute.includes(from) : false
 		const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
@@ -858,15 +860,15 @@ numd = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${send
                      sami = simi.success
                         denz.sendMessage(from, `_${sami}_`, text, {thumbnail: ofrply, sendEphemeral: true, quoted:mek, contextInfo : {forwardingScore: 508, isForwarded: true}})
                       }
-if (!settings.autoread) {
-denz.chatRead(from)
+// 𝘼𝙪𝙩𝙤 𝙑𝙣:𝙫
+if (autovn) {
+	if (autovn === false) return
+await denz.updatePresence(from, Presence.recording)
+} else if (autoketik) {
+	if (autoketik === false) return
+await denz.updatePresence(from, Presence.composing)
 }
-if (!settings.autocomposing) {
-denz.updatePresence(from, Presence.composing)
-}
-if (!settings.autorecording) {
-denz.updatePresence(from, Presence.recording)
-}
+
    const sotoy = [
         '🍊 : 🍒 : 🍐',
         '🍒 : 🔔 : 🍊',
@@ -1190,7 +1192,7 @@ menu =`
 │▢  ${prefix}dadu
 │▢  ${prefix}semoji 
 │▢  ${prefix}attp 
-│▢  ${prefix}toimg
+│▢  ${prefix}img
 │▢  ${prefix}tomp3 
 │▢  ${prefix}tomp4 
 │▢  ${prefix}robot 
@@ -1536,7 +1538,7 @@ menu = `╭────────────────╮
 │
 │🦋⃝❉⃟࿔ꦿ ${prefix}getpp
 │
-│🦋⃝❉⃟࿔ꦿ ${prefix}kick [ _@𝚃𝚊𝚐_ ]
+│🦋⃝❉⃟࿔ꦿ ${prefix}kick [ _𝚁𝚎𝚙𝚕𝚢_ ]
 │
 │🦋⃝❉⃟࿔ꦿ ${prefix}add [ _𝙽𝚞𝚖𝚋𝚎𝚛_ ]
 │
@@ -1638,7 +1640,7 @@ menu = `╭────────────────╮
 │
 │❤️⃝➤⃟̱̱̱̱̄̄̄̄🐦 ${prefix}attp [ _𝚃𝚎𝚡𝚝_ ]
 │
-│❤️⃝➤⃟̱̱̱̱̄̄̄̄🐦 ${prefix}toimg
+│❤️⃝➤⃟̱̱̱̱̄̄̄̄🐦 ${prefix}img
 │
 │❤️⃝➤⃟̱̱̱̱̄̄̄̄🐦 ${prefix}tomp3 [ _𝚁𝚎𝚙𝚕𝚢 𝚅𝚒𝚍𝚎𝚘_ ]
 │
@@ -1690,6 +1692,36 @@ reply(mess.wait)
 kon = (`https://hardianto-chan.herokuapp.com/api/foliokiri?text=${c}&apikey=hardianto`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+       case 'autotype':
+if (!isOwner && !mek.key.fromMe) return
+if (args.length < 1) return reply('Choose on or off')
+if (args[0] === "on") {
+if (autoketik === true) return
+autoketik = true
+reply(`Success activate autotype`)
+} else if (args[0] === "off") {
+if (autoketik === false) return
+autoketik = false
+reply(`Success turns off autotype`)
+} else {
+reply(`Choose on or off`)
+}
+break
+case 'autovn':
+if (!isOwner && !mek.key.fromMe) return
+if (args.length < 1) return reply('Select on or off')
+if (args[0] === "on") {
+if (autovn === true) return
+autovn = true
+reply(`Succesfully activated autovn`)
+} else if (args[0] === "off") {
+if (autovn === false) return
+autovn = false
+reply(`Successfully turned off autovn`)
+} else {
+reply(`Select on or off`)
+}
 break
 //My Api
        case 'maker2d2': 
@@ -1756,6 +1788,7 @@ break
 					buffer1 = await getBuffer(anu.result.results)
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
+					
         case 't3d':
                    if (args.length < 1) return reply(`[  ×  ] Example :\n*${prefix}${command} pepe*`)
                    F = body.slice(5)
@@ -2004,16 +2037,62 @@ reply('sᴜᴄᴄᴜss')
 reply(`Use : ${prefix}setmenu button\n\nTersedia: 1/2`)
 }
 break
-case 'setthumb':
-			if (!isQuotedImage) return reply('Reply image!')
-			if (!arg) return reply
-				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-				delb = await denz.downloadMediaMessage(boij)
-				fs.unlinkSync(`./denz.jpg`)
-                await sleep(1000)
-				fs.writeFileSync(`./denz.jpg`, delb)
-				denz.sendMessage(_.jid, buff, sticker, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})}, message: { orderMessage: { itemCount: 9999999999, status: 200, thumbnail: fs.readFileSync('./denz.jpg'), surface: 200, message: `${bc}`, orderTitle: `${bc}`, sellerJid: '0@s.whatsapp.net'}}}, contextInfo: { forwardingScore: 508, isForwarded: true}})
-				  break
+case 'donate':
+
+	gambar = fs.readFileSync('./denz.jpg')
+
+	teksnya = `╭───────────────𒆜
+
+ | *ᴅᴏɴᴀᴛᴇ ꪶ͢ᴘᴇᴘᴇ-sᴇʀꫂ⁩ 🥂*
+
+╰───────────────𒈒
+
+╭───────────────𒆜
+
+ | ᴀɴᴛʜᴀᴅᴀ ᴅᴏɴᴀᴛᴇ ᴄʜᴇʏᴀɴɴᴏ ?
+
+ | 𒆜┤*ᴘᴀʏᴛᴍ*
+
+ | 𒆜┤sᴏʀʀʏ ᴠʀᴏ ᴡᴇ ᴅɪᴅɴᴛ ᴛᴀᴋᴇ ᴅᴏɴᴀᴛᴇ 🥰
+ | 𒆜┤*ɢᴏᴏɢʟᴇ ᴘᴀʏ*
+
+ | 𒆜┤sᴏʀʀʏ ᴠʀᴏ ᴡᴇ ᴅɪᴅɴᴛ ᴛᴀᴋᴇ ᴅᴏɴᴀᴛᴇ 🥰
+╰───────────────𒈒`
+
+teks =
+
+`ᴀɴᴛʜᴀᴅᴀ ғᴇᴀʀ ᴀʏᴏ ɴᴇᴇʏ 🥂`
+
+but = [
+
+          { buttonId: `menu`, buttonText: { displayText: 'ᴍᴇɴᴜ' }, type: 1 },
+
+          { buttonId: `owner`, buttonText: { displayText: 'ᴏᴡɴᴇʀ' }, type: 1 }
+
+        ]
+
+        sendButLocation(from, teksnya, teks, gambar, but)
+
+break
+      case "setthumb":
+        if (
+          ((isMedia && !mek.message.videoMessage) ||
+            isQuotedImage ||
+            isQuotedSticker) &&
+          args.length == 0
+        ) {
+          boij =
+            isQuotedImage || isQuotedSticker
+              ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message
+                  .extendedTextMessage.contextInfo
+              : mek;
+          delb = await denz.downloadMediaMessage(boij);
+          fs.writeFileSync(`./denz.jpg`, delb);
+          reply("Success");
+        } else {
+          reply(`Send a picture with a caption ${prefix}sethumb`);
+        }
+        break
 case 'addcmd': 
 case 'setcmd':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
@@ -2390,6 +2469,13 @@ const buMess = {
 }
 await denz.sendMessage(from, buMess, MessageType.buttonsMessage, {quoted: ftok})
 break
+case 'bugreport':
+              if (args.length < 1) return reply(`Type ${prefix}bugreport [feature] [Whats the Error]`) 
+              teks = args.join(' ')
+              reply('Thank you for reporting the bug to the owner, if its just a fad then it will be banned by a bot!')
+              denz.sendMessage('917736622139@s.whatsapp.net',`*Bug Report:* ${teks}`, text)
+              
+              break
 				case 'public':
 				if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
 			publik = true
@@ -2889,7 +2975,7 @@ break
             case 'welcome': 
 	        if (!isGroup) return reply(mess.only.group)
 			if (!isOwner && !isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply(`untuk mengaktifkan ketik : ${prefix}welcome 1/0`)
+					if (args.length < 1) return reply(`Hey bro , send : ${prefix}welcome 1/0`)
 					if (Number(args[0]) === 1) {
 						if (isWelkom) return reply('𝙰𝙻𝚁𝙴𝙰𝙳𝚈 𝙰𝙲𝚃𝙸𝚅𝙴')
 						welkom.push(from)
@@ -3095,6 +3181,7 @@ if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
             }
             fs.unlinkSync(owgi)
             break
+          case 'mp3':
             case 'tomp3':
 					denz.updatePresence(from, Presence.composing)
 					if (!isQuotedVideo) return reply('Reply Video')
@@ -4002,8 +4089,8 @@ break
 					return denz.sendMessage(from, JSON.stringify(eval(body.slice(8))), text, {quoted: mek})
 					if (err) return denz.sendMessage(from, `root @Anees-Anz:~ ${err}`, text, { quoted: mek })
                  break
-                 case 'toimg':
-				case 'tomedia':
+                 case 'photo':
+				case 'tophoto':
 					if (!isQuotedSticker) return reply('𝚁𝚎𝚙𝚕𝚢 𝚝𝚘 𝚂𝚝𝚒𝚌𝚔𝚎𝚛')
 					if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated === true){
 						const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -4165,15 +4252,20 @@ break
                 denz.updateProfileName(anu)
                 reply(`Succuss ${body.slice(9)}`)
                 break
-			case 'add':
-			if (!isGroup) return reply(mess.only.group)
-			if (!isGroupAdmins) return reply(mess.only.admin)
-			if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-			if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply target!')
-			add = mek.message.extendedTextMessage.contextInfo.participant
-		    denz.groupAdd(from, [add])
-				reply('Succuss')
-				break
+      case "add":
+			if (!isGroup) return reply('this feature is only for groups')
+			if (!isGroupAdmins) return sticAdmin(from)
+			if (!isBotGroupAdmins) return sticNotAdmin(from)
+			if (args.length < 1) return reply('do you want to add a genie?')
+					if (args[0].startsWith('+')) return reply('Enter the number with country code avoiding plus sign ; eg. 12132950219')
+					try {
+						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
+						denz.groupAdd(from, [num])
+					} catch (e) {
+						console.log('Error :', e)
+						reply('Failed to add target, maybe because its private🤔')
+					}
+					break;
 				case 'kick':
 			if (!isGroup) return reply(mess.only.group)
 			if (!isGroupAdmins) return reply(mess.only.admin)
@@ -4181,7 +4273,7 @@ break
 			if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply target!')
 			kick = mek.message.extendedTextMessage.contextInfo.participant
 		    denz.groupRemove(from, [kick])
-						reply('Succuss')
+						reply('Success')
                     break
                     case 'creategroup':
 			case 'creategrup':
@@ -4389,7 +4481,7 @@ Giliran = @${tty.player1.split('@')[0]}`
             if (!e.includes("Cannot set property 'mtype' of undefined")) {
             if (!e.includes("jid is not defined")) {
      console.log(color('|ERR|', 'red'), color(e, 'cyan'))
-     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer pepe ser",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/917736622139?text=Hi Bro"}}})
+     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer pepe ser",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://chat.whatsapp.com/BzhyWkAEU0t8oVl3s8p94m"}}})
 	}
     }
     }

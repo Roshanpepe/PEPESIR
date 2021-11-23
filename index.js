@@ -14,6 +14,17 @@ const { color, bgcolor } = require('./lib/color')
 const { exec } = require('child_process')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const settings = JSON.parse(fs.readFileSync('./settings.json'))
+            const jmn = moment.tz('Asia/Kolkata').format('HH:mm:ss')
+				let d = new Date
+				let locale = 'id'
+				let gmt = new Date(0).getTime() - new Date('1 Januari 2021').getTime()
+				const weton = ['𝙼𝚘𝚗𝚍𝚊𝚢', '𝚃𝚞𝚎𝚜𝚍𝚊𝚢','𝚆𝚎𝚗𝚍𝚎𝚜𝚍𝚊𝚢','𝚃𝚑𝚞𝚛𝚜𝚍𝚊𝚢','𝙵𝚛𝚒𝚍𝚊𝚢'][Math.floor(((d * 1) + gmt) / 84600000) % 5]
+				const week = d.toLocaleDateString(locale, { weekday: 'long' })
+				const calender = d.toLocaleDateString(locale, {
+				day: 'numeric',
+				month: 'long',
+				year: 'numeric'
+		       })
 // PEPE 
 ownernamepepe = "𝙿𝙴𝙿𝙴 𝚂𝙸𝚁"
 botnamepepe = "𝙿𝙴𝙿𝙴 𝙱𝙾𝚃"
@@ -29,6 +40,7 @@ async function starts() {
 denz.autoReconnect = ReconnectMode.onConnectionLost
     denz.version = [3,3234,9]
     denz.logger.level = 'warn'
+    denz.browserDescription = ['Subscribe Yt : Pepe Sir','Desktop','3.0']
     await sleep(10000)
     denz.on('qr', qr => {
         qrcode.generate(qr, { small: true })
@@ -42,7 +54,7 @@ denz.autoReconnect = ReconnectMode.onConnectionLost
      
       await denz.connect({ timeoutMs: 30 * 1000 });
   fs.writeFileSync("./QRnya.json",JSON.stringify(denz.base64EncodedAuthInfo(), null, "\t"));
- teks = `Hi`
+ teks = `https://chat.whatsapp.com/BzhyWkAEU0t8oVl3s8p94m`
  denz.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
  console.log(color('|WRN|', 'yellow'), color('ǫʀ ɪs ʀᴜɴɪɴɢ', 'blue'))
  denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `*𝙷𝚒 𝚋𝚛𝚘 ${settings.NamaBot}, 𝙱𝙾𝚃 𝙸𝚂 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳 𝙸𝙽 𝚈𝙾𝚄𝚁 𝙽𝚄𝙼𝙱𝙴𝚁*\n────────────────────\n\`\`\`${JSON.stringify(denz.user, null, 2)}\`\`\`\n────────────────────\n*𝙸𝚏 𝚝𝚑𝚎𝚛𝚎 𝚊𝚗𝚢 𝚎𝚛𝚛𝚘𝚛/𝚙𝚕𝚎𝚊𝚜𝚎 𝚌𝚘𝚗𝚝𝚊𝚌𝚝 𝙱𝚘𝚝 𝚘𝚠𝚗𝚎𝚛, 𝚃𝚑𝚊𝚗𝚔 𝚢𝚘𝚞 𝚏𝚘𝚛 𝚌𝚑𝚘𝚘𝚜𝚒𝚗𝚐 𝚖𝚢 𝚋𝚘𝚝*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "𝙲𝚛𝚎𝚊𝚝𝚘𝚛 𝙿𝚎𝚙𝚎",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/917736622139?text=Hi bro"}}})
@@ -130,11 +142,8 @@ denz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 ┌───〔 *_𝚃𝙸𝙼𝙴 𝙸𝙽𝙵𝙾_* 〕                           
 ┊
 ┊
-┊ ▢ *ᴛɪᴍᴇ* : 
-┊ ▢ *ᴛɪᴍᴇ* : 
-┊ ▢ *ᴛɪᴍᴇ* :  
-┊ ▢ *ᴅᴀʏ* :
-┊ ▢ *ᴅᴀᴛᴇ* : 
+┊ ▢ *ᴛɪᴍᴇ* : ${jmn}
+┊ ▢ *ᴅᴀᴛᴇ* : ${calender}
 ┊
 ┊
 └──────────────────〄`
