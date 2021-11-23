@@ -108,7 +108,7 @@ nopref = false
 // PEPE 
 ApiZeks = "https://api.zeks.xyz",
 zeksApikey = "Alphabott",
-ownernamepepe = "𝙿𝙴𝙿𝙴 𝚂𝙸𝚁"
+ownernamepepe = "𝙻𝙴𝚅𝙸 𝚂𝙸𝚁"
 botnamepepe = "𝙿𝙴𝙿𝙴 𝙱𝙾𝚃"
 autovn = false;
 autoketik = false;
